@@ -1,0 +1,48 @@
+[project]
+name = "python-course"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "ratikanta", email = "ratikantanayak1999@gmail.com" }
+]
+requires-python = ">=3.12, <3.14"
+dependencies = [
+    "fastapi",
+    "httpx",
+    "jupyterlab>=4.6.3",
+    "matplotlib>=3.11.1",
+    "numpy>=2.5.2",
+    "openai>=3.3.0",
+    "pandas>=3.0.5",
+    "pydantic",
+    "scikit-learn>=1.9.0",
+    "tiktoken>=0.14.0",
+    "torch>=2.13.0",
+    "uvicorn",
+]
+
+[project.scripts]
+python-course = "python_course:main"
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
+default = true
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy",
+    "pytest",
+    "pytest-cov",
+    "ruff",
+]
